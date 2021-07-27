@@ -1,0 +1,24 @@
+.app {
+  height: 100vh;
+
+  .sections {
+    // Scrolling wheels skip elements if this container has a background-color set
+    width: 100%;
+    height: calc(100vh - 70px);
+    position: relative;
+    top: 70px;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scrollbar-width: none; //firefox
+    &::-webkit-scrollbar {
+      display: none;
+    } // others
+
+    > * {
+        width: 100vw;
+        height: calc(100vh - 70px);
+        scroll-snap-align: start;
+    }
+  }
+}
